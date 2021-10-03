@@ -1,0 +1,28 @@
+
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+  <div class="index_body">
+    <h1> All Posts </h1>
+    <!-- get current user -->
+     {{ request.user.id|json_script:"cuser_id" }}
+    <div class="border border-primary" style="margin:10px">
+     <form method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Post">
+     </form>
+    </div>
+  </div>
+  <div class="profile_body" style="display:none;">
+   
+ 
+  </div>
+  <div class="following_posts" style="display:none;">
+   
+ 
+  </div>
+      
+{% endblock %}
